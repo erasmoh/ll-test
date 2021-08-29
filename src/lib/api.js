@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiCall = axios.create({
-    baseURL: "https://api.propublica.org/congress/v1/116/senate",
+    baseURL: "https://api.propublica.org/congress/v1",
     headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -12,7 +12,7 @@ const apiCall = axios.create({
 const api = {
     members: {
         listMembers() {
-            return apiCall("/members.json");
+            return apiCall("/116/senate/members.json");
         },
         readMember(memberId) {
             return apiCall(`/members/${memberId}.json`);

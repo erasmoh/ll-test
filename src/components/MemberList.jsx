@@ -1,34 +1,16 @@
-import React, { useState, useEffect } from "react";
-import api from "../lib/api";
+import React from "react";
+import { Link } from "react-router-dom";
 import Member from "./Member";
+import "./styles/MemberList.scss";
 
-export default function MemberList() {
-    const [data, setData] = useState([]);
-
-    const fetchData = () => {
-        api.members
-            .listMembers()
-            .then((res) => {
-                // console.log(res);
-                let listOfMembers = res.data.results[0].members;
-                console.log(res.data.results[0].members);
-                setData(listOfMembers);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
+export default function MemberList({ members }) {
     return (
         <div className="memberlist">
-            {data.map((member, index) => (
-                <Member member={member.id} key={index} />
+            {members.map((member, index) => (
+                <Link to={`/${member.id}`} key={index}>
+                    <Member member={member} />
+                </Link>
             ))}
-            ;
         </div>
     );
 }

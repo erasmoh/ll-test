@@ -1,10 +1,15 @@
-import React, { Component } from "react";
-import "./styles/Footer.scss";
+import React from "react";
+import "./styles/Member.scss";
 
-class Footer extends Component {
-    render() {
-        return <div className="member">{this.props.member}</div>;
-    }
+function Member(props) {
+    const member = props.member;
+
+    return (
+        <div className="memberCard">
+            <div className="memberCard-name">{`${member.last_name}, ${member.first_name}`}</div>
+            <div className="memberCard-title">{member.title}</div>
+        </div>
+    );
 }
 
-export default Footer;
+export default Member;
