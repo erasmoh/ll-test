@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./styles/MemberDetails.scss";
 import api from "../lib/api";
 
@@ -23,11 +23,13 @@ export default function MemberDetails() {
 
     useEffect(() => {
         fetchData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <div className="memberDetails">
-            {loading && <p>Cargando...</p>}
+            {loading && <p>Loading...</p>}
+            <Link to="/">Back</Link>
             <div className="memberDetails-name">{`${member.last_name}, ${member.first_name}`}</div>
             <ul>
                 {!loading &&

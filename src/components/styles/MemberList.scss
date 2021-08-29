@@ -1,6 +1,22 @@
-.memberlist {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 5% 0;
+@mixin flex($flex, $direction, $align) {
+    display: $flex;
+    flex-direction: $direction;
+    align-items: $align;
+}
+.memberList {
+    width: 100vw;
+    @include flex(flex, column, center);
+    &__search {
+        @include flex(flex, column, center);
+        margin-top: 5%;
+        &-basic {
+            @include flex(flex, column, center);
+        }
+    }
+    &__list {
+        @include flex(flex, row, center);
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 5% 0;
+    }
 }
