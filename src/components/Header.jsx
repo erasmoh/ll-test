@@ -3,7 +3,7 @@ import './styles/Header.scss';
 
 class Header extends Component {
     render() {
-        return <div className="header">Im a nice and simple Header</div>;
+        return <div className="header">Congress Members</div>;
     }
 }
 

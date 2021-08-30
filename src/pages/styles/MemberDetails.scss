@@ -1,4 +1,31 @@
 .memberDetails {
-    background-color: gray;
-    color: black;
+    min-height: 90vh;
+    max-width: 70vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-left: 15vw;
+    @media screen and (max-width:768px) {
+        max-width: 90vw;
+        margin-left: 5vw;
+        flex-direction: column;
+        &-box {
+            order:2;
+        }
+        &-image {
+            order:1;
+            // max-height: 400px;
+            // width: auto;
+        }
+    }
+    &-box {
+        padding: 5%;
+    }
+
+    &-name {
+        font-size: 1.5em;
+    }
+    &-dob {
+        margin-bottom: 20px;
+    }
 }

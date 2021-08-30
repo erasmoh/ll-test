@@ -1,0 +1,13 @@
+.Button {
+    border: 1px solid green;
+    color: green;
+    padding: 5px 10px;
+    margin: 5px;
+    text-decoration: none;
+    height: fit-content;
+    transition: all .4s ease-in-out;
+    &:hover {
+        color: white;
+        background-color: green;
+    }
+}

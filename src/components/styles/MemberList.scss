@@ -6,11 +6,28 @@
 .memberList {
     width: 100vw;
     @include flex(flex, column, center);
+    @media screen and (min-width:1300px) {
+        @include flex(flex, column, center);
+        width: 70vw;
+        margin-left: 15vw;
+    }
     &__search {
         @include flex(flex, column, center);
         margin-top: 5%;
         &-basic {
             @include flex(flex, column, center);
+            .field {
+                padding: 10px 30px;
+                border: 1px solid gray;
+                border-radius: 25px;
+                min-width: 40vw;
+                text-align: center;
+                margin-top: 10px;
+                &:focus {
+                    outline: none;
+                    border-color: green;
+                }
+            }
         }
     }
     &__list {
